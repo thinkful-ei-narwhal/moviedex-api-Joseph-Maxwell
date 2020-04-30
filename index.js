@@ -55,10 +55,10 @@ app.get('/movies', (request, response) => {
     }
 
     let correctVote = [];
-    parseFloat(averageVote);
+    let parsedVote = parseFloat(averageVote);
     if(averageVote){
         correctVote = movieDataSmall.filter(movie => {
-            return movie.avg_vote > averageVote;
+            return movie.avg_vote >= parsedVote;
         });
     }
 
